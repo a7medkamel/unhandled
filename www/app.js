@@ -35,6 +35,8 @@ app.configure('production', function(){
 
 app.get('/', routes.index);
 
+app.get('/foo/', routes.index);
+
 app.post('/api/v1/user/exceptions/', api.require.user_context, function (req, res) {
   api.exception_post(req);
 
@@ -44,12 +46,9 @@ app.post('/api/v1/user/exceptions/', api.require.user_context, function (req, re
 });
 
 app.get('/api/v1/user/exceptions/', /*api.require.user_context, */function (req, res) {
-  api.response.ok(202, req, res, function(result){
-    res.send('HELLO');
-  });
-  // api.me_exceptions(req, 
-  //   api.middleware.json_writer(req, res)
-  // );
+  api.me_exceptions(req, 
+    api.middleware.json_writer(req, res)
+  );
 });
 
 console.log(conf);
