@@ -43,7 +43,7 @@ app.post('/api/v1/user/exceptions/', api.require.user_context, function (req, re
   });
 });
 
-app.get('/api/v1/user/exceptions/', api.require.user_context, function (req, res) {
+app.get('/api/v1/user/exceptions/', /*api.require.user_context, */function (req, res) {
   api.me_exceptions(req, 
     api.middleware.json_writer(req, res)
   );
