@@ -11,20 +11,20 @@ var $conf = function(c){
 var $base = {
     env: {
       profile       : false
-    , host          : 'http://ahmedkamel.dyndns.org:3000/'
+    , host          : 'http://unhandled.net/'
     , port          : 3000
   }
 }
 
 var $default = {
   mongoose: {
-      uri           : 'mongodb://192.168.1.102/unhandled_test'
+      uri           : 'mongodb://96.126.98.21/unhandled'
   }
 };
 
 var $experimental = {
   mongoose: {
-      uri           : 'mongodb://192.168.1.102/unhandled_exp'
+      uri           : 'mongodb://96.126.98.21/unhandled_exp'
   }
 };
 
