@@ -4,6 +4,7 @@ var   mongoose              = require('mongoose')
     , conf                  = require('./conf').conf
     , api_require           = require('./api.require')
     , api_response          = require('./api.response')
+    , api_middleware        = require('./api.middleware')
     ;
      
 var   db                    = mongoose.connect(conf.mongoose.uri)
@@ -25,8 +26,14 @@ function exception_post(req, cb){
   })
 }
 
+function me_exceptions(req, cb){
+  Exception.find({}, cb);
+}
+
 module.exports = {
-    exception_post              : exception_post
-  , require                     : api_require
+    require                     : api_require
+  , middleware                  : api_middleware
   , response                    : api_response
+  // api
+  , exception_post              : exception_post
 };
