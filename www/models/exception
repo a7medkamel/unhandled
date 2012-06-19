@@ -1,0 +1,22 @@
+var   mongoose = require('mongoose')
+    ;
+
+var Schema = mongoose.Schema
+  , ObjectId = Schema.ObjectId;
+
+module.exports = {
+    def: {
+        ClassName         : { type: String, trim: true }
+      , Message           : { type: String, trim: true }
+      , Source            : { type: String, trim: true }
+      , StackTraceString  : { type: String, trim: true }
+      , StackTrace        : { type: String, trim: true }
+      , ExceptionMethod   : { type: String, trim: true }
+      , HResult           : { type: Number }
+      , Source            : { type: String, trim: true }
+    }
+};
+
+var Exception = new Schema(module.exports.def, {strict: true});
+
+mongoose.model('Exception', Exception)
