@@ -36,4 +36,5 @@ module.exports = {
   , response                    : api_response
   // api
   , exception_post              : exception_post
+  , me_exceptions               : me_exceptions
 };
