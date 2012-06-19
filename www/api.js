@@ -27,7 +27,7 @@ function exception_post(req, cb){
 }
 
 function me_exceptions(req, cb){
-  Exception.find({}, cb);
+  Event.find({}, cb);
 }
 
 module.exports = {
