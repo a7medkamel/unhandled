@@ -35,18 +35,16 @@ app.configure('production', function(){
 
 app.get('/', routes.index);
 
-app.get('/foo/', routes.index);
-
-app.post('/api/v1/user/exceptions/', api.require.user_context, function (req, res) {
-  api.exception_post(req);
+app.post('/api/v1/application/events/', api.require.user_context, function (req, res) {
+  api.app_events_post(req);
 
   api.response.ok(202, req, res, function(result){
     res.send(result);
   });
 });
 
-app.get('/api/v1/user/exceptions/', /*api.require.user_context, */function (req, res) {
-  api.me_exceptions(req, 
+app.get('/api/v1/application/events/', /*api.require.user_context, */function (req, res) {
+  api.app_events(req, 
     api.middleware.json_writer(req, res)
   );
 });

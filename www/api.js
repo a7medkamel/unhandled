@@ -18,7 +18,7 @@ var   Exception             = mongoose.model('Exception')
     , Event                 = mongoose.model('Event')
     ;
 
-function exception_post(req, cb){
+function app_events_post(req, cb){
   var model = new Event(req.body);
 
   model.save(function (err) {
@@ -26,7 +26,7 @@ function exception_post(req, cb){
   })
 }
 
-function me_exceptions(req, cb){
+function app_events(req, cb){
   Event.find({}, cb);
 }
 
@@ -35,6 +35,6 @@ module.exports = {
   , middleware                  : api_middleware
   , response                    : api_response
   // api
-  , exception_post              : exception_post
-  , me_exceptions               : me_exceptions
+  , app_events_post             : app_events_post
+  , app_events                  : app_events
 };
