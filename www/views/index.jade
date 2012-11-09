@@ -1,2 +1,43 @@
-h1= title
-p Welcome to unhandled.net
+extends skeleton
+
+append title
+  title= 'unhandled.net'
+
+append headstyles
+  //- link(rel='stylesheet', href='/stylesheets/showcase.layout.css')
+
+append bodyscripts
+  script
+    var MyApp = Em.Application.create();
+
+    require([ 'libs/ember/ember-data'
+            , 'libs/ember/ember' ]
+            
+    , function(Ember, DS){
+      console.log(Ember);
+      //- MyApp.Event = DS.Model.extend({
+      //-     primaryKey      : '_id'
+      //-   , app_Id          : DS.attr('string')
+      //-   , app_version     : DS.attr('string')
+      //-   , date            : DS.attr('date')
+      //-   //- , exception       : {
+      //-   //-     StackTrace      : DS.attr('date')
+      //-   //- }
+      //-   , findAll         : function(){
+      //-     $.get('/api/v1/application/events/', function(data) {
+      //-       console.log(data);
+      //-       MyApp.eventController.set('content', data);
+      //-     });
+      //-   }
+      //- });
+    });
+     
+    // App.eventController = Em.ArrayController.create({
+    //   content: App.Event.findAll()
+    // });
+
+append content
+  script(type="text/x-handlebars")
+    | {{#each eventController}}
+    |   <li>Hello, <b>{{app_Id}}</b> {{date}}!
+    | {{/each}}    

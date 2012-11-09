@@ -10,6 +10,12 @@ requirejs.config({
           return window.jQuery;
         }
     }
+    , 'libs/ember/ember-data': {
+        exports: 'DS'
+    }
+    , 'libs/ember/ember': {
+        exports: 'Ember'
+    }
     , 'libs/underscore/underscore': {
         exports: '_'
     }

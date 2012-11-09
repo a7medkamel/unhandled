@@ -1,0 +1,29 @@
+!!! 5
+html
+  head
+    block head
+      block title
+      block headmetadata
+        
+      script(src='/javascripts/require.js')
+      script(src='/javascripts/require.config.js')
+      script(src='/javascripts/libs/jquery/jquery.js')
+      script(src='/javascripts/libs/ember/ember.js')
+      script(src='/javascripts/libs/ember/ember-data.js')
+      script(src='/javascripts/libs/handlebars/handlebars.js')
+      
+      block headstyles
+        link(rel='stylesheet', href='/stylesheets/cssreset-context-min.css')
+      block headsacrum
+      block headscripts
+  
+  body
+    block body
+      block header
+      block content
+      block footer
+      div#fb-root
+
+      block bodyscripts
+        
+      block bodytemplates
